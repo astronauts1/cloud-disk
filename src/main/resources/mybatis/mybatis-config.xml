@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!--配置不开启二级缓存，全局开关，即使mapper文件中开启也不会起作用 -->
+    <settings>
+        <setting name="cacheEnabled" value="false"/>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+
+    <!--给类起别名 -->
+    <typeAliases>
+        <typeAlias type="com.icourt.clouddisk.entity.User" alias="User"/>
+        <typeAlias type="com.icourt.clouddisk.entity.Role" alias="Role"/>
+        <typeAlias type="com.icourt.clouddisk.entity.Permission" alias="Permission"/>
+    </typeAliases>
+</configuration>
+

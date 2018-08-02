@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.icourt.clouddisk.dao.IRoleDao">
+
+    <!-- 根据用户id查用户所有的角色 -->
+   <select id="listRoleByUserId" resultType="Role">
+        select role.role_id,role_name from user_role left join role on user_role.role_id=role.role_id where user_id=#{userId}
+   </select>
+
+</mapper>
