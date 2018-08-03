@@ -2,6 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.icourt.clouddisk.dao.IUserDao">
 
+
+    <!--<resultMap id="UserMap" type="com.icourt.clouddisk.entity.User">-->
+        <!--<id column="user_id" jdbcType="BIGINT" property="userId"/>-->
+        <!--<result column="username" jdbcType="VARCHAR" property="username"/>-->
+        <!--<result column="user_pwd" jdbcType="VARCHAR" property="userPwd"/>-->
+        <!--<result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate"/>-->
+        <!--<result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified"/>-->
+    <!--</resultMap>-->
+
     <!-- 根据用户id查用户 -->
     <select id="getUser" resultType="User">
         select user_id,username,user_pwd,gmt_create,gmt_modified from user where user_id=#{userId}

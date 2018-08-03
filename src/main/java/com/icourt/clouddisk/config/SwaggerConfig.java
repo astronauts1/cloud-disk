@@ -1,4 +1,4 @@
-package com.icourt.clouddisk;
+package com.icourt.clouddisk.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

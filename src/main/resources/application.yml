@@ -16,7 +16,8 @@ spring:
     port: 6379
     password:
     host: localhost
-    timeout: 0
+    timeout: 1000
+    database: 0
 mybatis:
   config-location: classpath:mybatis/mybatis-config.xml
   mapper-locations: classpath:mybatis/mapper/*.xml

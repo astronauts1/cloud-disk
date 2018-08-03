@@ -1,23 +1,33 @@
 package com.icourt.clouddisk;
 
+import com.icourt.clouddisk.service.IRoleService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.stereotype.Component;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@Component
 public class CloudDiskApplicationTests {
 
+
     @Resource
-    StringRedisTemplate redisTemplate;
+    RedisTemplate redisTemplate;
+
+    @Resource
+    IRoleService roleService;
 
     @Test
     public void contextLoads() {
-        redisTemplate.opsForValue().set("abc","测试");
+        roleService.listRoleNameByUserId(1);
+
+        roleService.listRoleNameByUserId(1);
+        roleService.listRoleNameByUserId(1);
     }
 
 }

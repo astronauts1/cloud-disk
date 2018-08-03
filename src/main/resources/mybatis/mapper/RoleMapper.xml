@@ -2,9 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.icourt.clouddisk.dao.IRoleDao">
 
+    <!--<resultMap id="BaseRoleMap" type="com.icourt.clouddisk.entity.Role">-->
+        <!--<id column="role_id" property="roleId" jdbcType="BIGINT"/>-->
+        <!--<result column="role_name" property="roleName" jdbcType="VARCHAR"/>-->
+    <!--</resultMap>-->
+
     <!-- 根据用户id查用户所有的角色 -->
    <select id="listRoleByUserId" resultType="Role">
         select role.role_id,role_name from user_role left join role on user_role.role_id=role.role_id where user_id=#{userId}
    </select>
+
+    <select id="listRoleNameByUserId" resultType="String">
+        select role_name roleName from user_role left join role on user_role.role_id=role.role_id where user_id=#{userId}
+    </select>
 
 </mapper>

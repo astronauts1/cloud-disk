@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * 角色dao
@@ -21,4 +22,11 @@ public interface IRoleDao {
      * @return
      */
     List<Role> listRoleByUserId(@Param("userId") Integer userId);
+
+    /**
+     * 获取该用户id对应的所有的角色的名称
+     * @param userId
+     * @return
+     */
+    Set<String> listRoleNameByUserId(@Param("userId") Integer userId);
 }

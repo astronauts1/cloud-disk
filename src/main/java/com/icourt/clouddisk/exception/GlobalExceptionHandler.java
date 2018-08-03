@@ -21,4 +21,13 @@ public class GlobalExceptionHandler {
         log.error("捕获未认证异常",e);
         return ResponseEntity.ok("用户未认证");
     }
+
+
+    @ExceptionHandler(value = UnRoleAuthorizedException.class)
+    public ResponseEntity<String> unRoleAuthorized(UnRoleAuthorizedException e){
+        log.error("捕获用户不具有合法角色异常",e);
+        return ResponseEntity.ok("用户不具有合法角色");
+    }
+
+
 }

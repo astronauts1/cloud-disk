@@ -66,6 +66,9 @@ public class JwtUtil {
         return jwsObject.serialize();
     }
 
+
+
+
     /**
      * 解析token
      * @param token
@@ -82,7 +85,7 @@ public class JwtUtil {
 
         JWSVerifier jwsVerifier = new MACVerifier(SECRET);
 
-        Map<String,Object> resultMap = new HashMap<>(5);
+        Map<String,Object> resultMap = new HashMap<>(2);
 
         //验证token
         if(jwsObject.verify(jwsVerifier)){
@@ -91,16 +94,15 @@ public class JwtUtil {
             resultMap.put("data",jsonObject);
 
             //判断token是否过期
-            if (jsonObject.containsKey(EXP)) {
-                Long expTime = Long.valueOf(jsonObject.get(EXP).toString());
-                Long nowTime = System.currentTimeMillis();
-                //判断是否过期
-                if (nowTime > expTime) {
-                    //已经过期
-                    resultMap.clear();
-                    resultMap.put("result", EXPIRE);
 
-                }
+            Long expTime = Long.valueOf(jsonObject.get(EXP).toString());
+            Long nowTime = System.currentTimeMillis();
+            //判断是否过期
+            if (nowTime > expTime) {
+                //已经过期
+                resultMap.clear();
+                resultMap.put("result", EXPIRE);
+
             }
         }
         else {
