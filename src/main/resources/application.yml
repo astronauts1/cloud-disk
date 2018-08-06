@@ -1,9 +1,8 @@
 logging:
-  file: ~/IdeaProjects/swagger-demo/log/sell.log
+  file: ~/IdeaProjects/cloud-disk/log/sell.log
   level:
     com.icourt.clouddisk.controller: debug
     com.icourt.clouddisk.filter: debug
-    com.icourt.clouddisk.exception: error
 
 spring:
   datasource:

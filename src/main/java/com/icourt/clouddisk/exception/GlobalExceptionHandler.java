@@ -30,4 +30,10 @@ public class GlobalExceptionHandler {
     }
 
 
+    @ExceptionHandler(value = Exception.class)
+    public ResponseEntity<String> unException(Exception e){
+        log.error("捕获异常信息",e);
+        return ResponseEntity.ok("系统发生了异常，请联系管理员");
+    }
+
 }
